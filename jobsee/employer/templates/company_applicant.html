@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Applicants for  {{ request.user.company.company_name }}</h1>
+    <ul>
+        {% for i in comp %}
+            <li>
+                {{ i.applicant }} -- {{ i.coverletter }} -- Applied on {{ i.date }}--{{i.job.job_title}}--[ {{i.applicant.email}} ]
+                
+            </li>
+        {% endfor %}
+    </ul>
+</html>
